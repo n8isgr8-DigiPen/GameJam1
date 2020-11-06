@@ -96,7 +96,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7299515410467014039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2cd0e8d8df4af64e94eb13c74628d2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 27f2aa479544ac34a8452b94e4b59cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!50 &7299515410467014038
@@ -155,10 +155,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7299515410467014039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b6d6ce03d56279469c07283ff842284, type: 3}
+  m_Script: {fileID: 11500000, guid: 833369782c817714c87614a8def977e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HEALTH: 50
+  bulletPrefab: {fileID: 7671778981641246146, guid: 333ad2e08b866ec4b9749176291600f5,
+    type: 3}
+  BulletSpeed: 0
+  shootDelay: 0.2
+  hasHomingBullets: 0
+  bulletSpawnPoint: {fileID: 4763431061385922600}
 --- !u!114 &8273368919477364592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,15 +173,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7299515410467014039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd7d7d2e3566504592a3ee0c10f2bde, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b297fed27b2eeb44a6ba16d59a4d7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7671778981641246146, guid: 4f8212031413fd34bb010208ff78bd52,
-    type: 3}
-  BulletSpeed: 10
-  shootDelay: 0.2
-  hasHomingBullets: 0
-  bulletSpawnPoint: {fileID: 0}
+  HEALTH: 50
 --- !u!1 &8025709626472262688
 GameObject:
   m_ObjectHideFlags: 0

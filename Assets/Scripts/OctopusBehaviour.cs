@@ -7,7 +7,7 @@ Date: 11/5/2020
 Desc: Basic Enemy (Octopus) only moves from left to right and dashes forward and up every once in a while
 */
 [RequireComponent(typeof(Rigidbody2D))]
-public class OctopusBehavior : MonoBehaviour
+public class OctopusBehaviour : MonoBehaviour
 {
     //NOT READY, SAVING FOR LATER
     Rigidbody2D octopusRB;
