@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7299515410467014043}
   - component: {fileID: 7299515410467014036}
+  - component: {fileID: 7299515410467014037}
   - component: {fileID: 7299515410467014038}
   - component: {fileID: 7299515410467014042}
   - component: {fileID: 8246516910594103028}
-  - component: {fileID: 2879471373818944368}
   - component: {fileID: 8273368919477364592}
   m_Layer: 8
   m_Name: Player
@@ -87,6 +87,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7299515410467014037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7299515410467014039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2cd0e8d8df4af64e94eb13c74628d2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &7299515410467014038
 Rigidbody2D:
   serializedVersion: 4
@@ -143,19 +155,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7299515410467014039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d32c895002a3246a1df604d9234c61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2879471373818944368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7299515410467014039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c430267ccca37f647a221fe1a399f4a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b6d6ce03d56279469c07283ff842284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HEALTH: 50
@@ -168,15 +168,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7299515410467014039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3624495d47668740b1220986e8e0f90, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cd7d7d2e3566504592a3ee0c10f2bde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7671778981641246146, guid: f1e86428ff7fe2445a1d374498336ab9,
+  bulletPrefab: {fileID: 7671778981641246146, guid: 4f8212031413fd34bb010208ff78bd52,
     type: 3}
-  BulletSpeed: 1
+  BulletSpeed: 10
   shootDelay: 0.2
   hasHomingBullets: 0
-  bulletSpawnPoint: {fileID: 4763431061385922600}
+  bulletSpawnPoint: {fileID: 0}
 --- !u!1 &8025709626472262688
 GameObject:
   m_ObjectHideFlags: 0
