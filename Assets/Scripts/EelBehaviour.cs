@@ -10,10 +10,15 @@ public class EelBehaviour : MonoBehaviour
     Vector2 startPosition;
     Vector2 target;
     Vector2 spawn;
+    [Tooltip("What bullet to fire")]
     public GameObject bolt;
+    [Tooltip("Distance up and down")]
     public float distance = 2;
+    [Tooltip("How fast up and down")]
     public float speed = 10;
+    [Tooltip("How Fast the bullets move")]
     public float bulletSpeed = 10;
+    [Tooltip("How Often the bullets fire")]
     public float FireRate = 1;
     // Use this for initialization
     void Start()
