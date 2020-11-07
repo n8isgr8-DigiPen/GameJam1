@@ -18,10 +18,4 @@ public class SharkBehaviour : MonoBehaviour
         sharkRB = GetComponent<Rigidbody2D>();
         sharkRB.AddForce(new Vector2(-Speed, 0));
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
