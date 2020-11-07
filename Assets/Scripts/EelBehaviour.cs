@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/*
+Name: Evan Anderson
+Date: 11/5/2020
+Desc: More complex enemy, moves in a sine wave and fires at the player
+*/
 public class EelBehaviour : MonoBehaviour
 {
     Vector2 startPosition;
     Vector2 target;
-    public Vector2 spawn;
+    Vector2 spawn;
     public GameObject bolt;
     public float distance = 2;
     public float speed = 10;
@@ -28,6 +32,7 @@ public class EelBehaviour : MonoBehaviour
         target = mouseScreenPosition;
         Vector3 lookAt = target;
         spawn = transform.position;
+        //code for rotating from Khizbu on https://answers.unity.com/questions/798707/2d-look-at-mouse-position-z-rotation-c.html
         float AngleRad = Mathf.Atan2(lookAt.y - this.transform.position.y, lookAt.x - this.transform.position.x);
 
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
