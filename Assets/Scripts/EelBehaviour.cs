@@ -34,7 +34,7 @@ public class EelBehaviour : MonoBehaviour
     {
         transform.position = startPosition + new Vector2(0, Mathf.Sin(speed * Time.time)) * distance;
         Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        target = mouseScreenPosition;
+        target = GameObject.Find("Player").transform.position;
         Vector3 lookAt = target;
         spawn = transform.position;
         //code for rotating from Khizbu on https://answers.unity.com/questions/798707/2d-look-at-mouse-position-z-rotation-c.html

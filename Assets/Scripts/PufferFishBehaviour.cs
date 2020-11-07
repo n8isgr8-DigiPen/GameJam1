@@ -29,11 +29,11 @@ public class PufferFishBehaviour : MonoBehaviour
         //GameObject.Find("Player").transform.position; will impliment when we have player;
         
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        target = mousePos;
+        target = GameObject.Find("Player").transform.position;
         Vector3 perpendicular = Vector3.Cross(target-transform.position,Vector3.forward);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, perpendicular);
         pufferfishRB.velocity = -transform.right * speed;
-        if (Vector2.Distance(transform.position, target) <= ExplodeDistance/2)
+        if (Vector2.Distance(transform.position, target) <= ExplodeDistance)
         {
             Explode();
         }

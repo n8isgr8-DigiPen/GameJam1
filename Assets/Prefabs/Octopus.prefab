@@ -98,7 +98,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -118,8 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7f80a576d713448b395041193c9e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugDashSpeed: 200
-  DebugDashFrequency: 0.5
+  DebugDashSpeed: 500
+  DebugDashFrequency: 1.35
   DebugDashTime: 0.5
 --- !u!61 &8083703169056328310
 BoxCollider2D:
