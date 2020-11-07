@@ -9,6 +9,12 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    private void Start()
+    {
+        if (tag != "Player") return;
+        PlayerManager.PlayerHealth = this;
+    }
+
     public int HEALTH = 50;
     public void updateHealth(int healthChange) 
     {

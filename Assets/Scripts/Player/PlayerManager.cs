@@ -1,8 +1,13 @@
-﻿using System.Collections;
+﻿/*
+Name: Nate Stern
+Date: 11/5/20
+Desc: Manages The Powerups through a static class with calculations and accessors.
+*/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerupManager
+public class PlayerManager
 {
     #region HomingBullets
 
