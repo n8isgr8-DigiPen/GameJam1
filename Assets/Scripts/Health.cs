@@ -6,9 +6,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
+    public UnityEvent onDeath = new UnityEvent();
     private void Start()
     {
         if (tag != "Player") return;
@@ -21,6 +22,7 @@ public class Health : MonoBehaviour
         HEALTH += healthChange;
         if(HEALTH <= 0)
         {
+            onDeath.Invoke();
             Destroy(gameObject);
         }
     }

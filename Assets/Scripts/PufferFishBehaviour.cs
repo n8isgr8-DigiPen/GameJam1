@@ -9,17 +9,19 @@ Desc: More complex enemy, moves towards player and puffs up when it gets close, 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PufferFishBehaviour : MonoBehaviour
 {
-    Camera cam;
+    
     Rigidbody2D pufferfishRB;
+    [Tooltip("Movement Speed")]
     public float speed;
     Vector3 target;
+    [Tooltip("How Far away will it expand?")]
     public float ExplodeDistance;
     bool exploded = false;
     // Use this for initialization
     void Start()
     {
         
-        cam = Camera.main;
+        
         pufferfishRB = GetComponent<Rigidbody2D>();
     }
 
@@ -28,7 +30,7 @@ public class PufferFishBehaviour : MonoBehaviour
     {
         //GameObject.Find("Player").transform.position; will impliment when we have player;
         
-        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        
         target = GameObject.Find("Player").transform.position;
         Vector3 perpendicular = Vector3.Cross(target-transform.position,Vector3.forward);
         transform.rotation = Quaternion.LookRotation(Vector3.forward, perpendicular);
