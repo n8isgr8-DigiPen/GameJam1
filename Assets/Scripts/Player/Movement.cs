@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
         //caps the movement speed between -8/8 on x and -5/5 on y
         rb.velocity = new Vector2(
             Mathf.Max(-8, Mathf.Min(8, rb.velocity.x)),
-            Mathf.Max(-5, Mathf.Min(5, rb.velocity.x)));
+            Mathf.Max(-5, Mathf.Min(5, rb.velocity.y)));
     
     }
 }
