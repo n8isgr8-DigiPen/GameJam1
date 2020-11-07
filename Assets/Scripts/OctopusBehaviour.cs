@@ -18,7 +18,7 @@ public class OctopusBehaviour : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        throw new NotImplementedException();
+        
         octopusRB = GetComponent<Rigidbody2D>();
         StartCoroutine(Dash());
     }
@@ -26,12 +26,11 @@ public class OctopusBehaviour : MonoBehaviour
  
     IEnumerator Dash()
     {
-        yield return new WaitForSeconds(.5f);
-        octopusRB.AddForce(new Vector2(-DebugDashSpeed, DebugDashSpeed));
-        yield return new WaitForSeconds(.5f);
-        //octopusRB.AddForce(new Vector2(DebugDashSpeed));
-        
-        StartCoroutine(Dash());
+        while (true)
+        {
+            octopusRB.AddForce(new Vector2(-DebugDashSpeed*.3f, DebugDashSpeed*1.3f));
+            yield return new WaitForSeconds(DebugDashFrequency);
+        }        
     }
 
 }
