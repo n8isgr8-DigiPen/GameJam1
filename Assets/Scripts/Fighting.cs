@@ -21,9 +21,9 @@ public class Fighting : MonoBehaviour
         timer += Time.deltaTime;
         if (Input.GetKey(KeyCode.Space)) 
         {
-            if (timer > shootDelay) 
+            if (timer >= shootDelay) 
             {
-                GameObject Bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation);
+                GameObject Bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation);
                 if (!hasHomingBullets)
                 {
                     Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(BulletSpeed, 0);
