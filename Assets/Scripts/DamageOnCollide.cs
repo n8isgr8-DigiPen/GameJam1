@@ -10,7 +10,8 @@ using UnityEngine;
 public class DamageOnCollide : MonoBehaviour
 {
     public int damage = 10;
-
+    public bool DestroyOnCollide = true;
+    public string DestroyOn;
     void OnCollisionEnter2D(Collision2D collision)
     {
         Health otherHealth = collision.gameObject.GetComponent<Health>();
@@ -18,6 +19,14 @@ public class DamageOnCollide : MonoBehaviour
         {
             otherHealth.updateHealth(-damage);
         }
-        Destroy(gameObject);
+        if (DestroyOnCollide)
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == DestroyOn)
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

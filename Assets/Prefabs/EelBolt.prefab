@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -621797401803922452}
   - component: {fileID: 5119133051651264541}
   - component: {fileID: -84502950032017708}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EelBolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,4 +164,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 8483885337553981411}
   - component: {fileID: -1325597245665253643}
   - component: {fileID: -3770456930166705183}
-  m_Layer: 0
+  - component: {fileID: 4751839664773442652}
+  m_Layer: 11
   m_Name: Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +133,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8483885337553981411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4e9a18ded34c8478c7ddae20687ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
+  DestroyOnCollide: 0
+  DestroyOn: Player
 --- !u!114 &-3770456930166705183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,4 +174,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b297fed27b2eeb44a6ba16d59a4d7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HEALTH: 50
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4751839664773442652}
+        m_MethodName: RemoveMe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  HEALTH: 20
+--- !u!114 &4751839664773442652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8483885337553981406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e79377fa0e96544ba83bf14075047b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
