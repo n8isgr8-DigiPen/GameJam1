@@ -12,12 +12,15 @@ public class DamageOnCollide : MonoBehaviour
     public int damage = 10;
     public bool DestroyOnCollide = true;
     public string DestroyOn;
+    public GameObject HitPrefab;
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         Health otherHealth = collision.gameObject.GetComponent<Health>();
         if(otherHealth != null)
         {
             otherHealth.updateHealth(-damage);
+            Instantiate(HitPrefab, transform.position, Quaternion.Euler(transform.up));
         }
         if (DestroyOnCollide)
         {
