@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         //gets a vector2 from wasd or arrow keys
-        Vector2 movement = new Vector2(Input.GetAxis("Horizontal") * 8f * Time.deltaTime, Input.GetAxis("Vertical") * 8f * Time.deltaTime);
+        Vector2 movement = new Vector2(Input.GetAxis("Horizontal") * PlayerManager.PlayerSpeed * Time.deltaTime, Input.GetAxis("Vertical") * PlayerManager.PlayerSpeed * Time.deltaTime);
         
         //adds movement vector to the current velocity.
         rb.velocity = rb.velocity + movement;

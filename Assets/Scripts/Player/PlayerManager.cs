@@ -52,6 +52,48 @@ public class PlayerManager
     }
     #endregion
 
+    #region SpeedBoost
+
+    //Time in seconds until speed effect wears off
+    private static float speedTimeLeft;
+
+    //Last Time that speed was checked for manual calculation of time
+    private static float lastSpeedCheckTime = 0;
+
+    /// <summary>
+    /// gets and sets the time the speed powerup will end.
+    /// <para>GET: gets the time that speed will run out from beginning of game </para>
+    /// <para>(calculated from beginning of game use Time.time to find seconds since beginning of game)</para>
+    /// <para>SET: additional seconds to add to the speed timer</para>
+    /// </summary>
+    public static float SpeedEndTime
+    {
+        set => speedTimeLeft += value;
+        get => GetSpeedTimeLeft() + Time.time;
+    }
+
+    /// <summary>
+    /// Calculates the time remaining on the speed powerup
+    /// </summary>
+    public static float GetSpeedTimeLeft()
+    {
+        if (lastSpeedCheckTime == 0)
+        {
+            lastSpeedCheckTime = Time.time;
+        }
+        speedTimeLeft -= (Time.time - lastSpeedCheckTime);
+        lastSpeedCheckTime = Time.time;
+        return speedTimeLeft;
+    }
+
+    public static float PlayerSpeed
+    {
+        get => GetSpeedTimeLeft() >= Time.time ? 12 : 8;
+    }
+
+
+    #endregion
+
     #region PlayerStats
 
     /// <summary>
