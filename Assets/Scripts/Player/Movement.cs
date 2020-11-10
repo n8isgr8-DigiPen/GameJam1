@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        //gets a vector2 from wasd or arrow keys
+        //gets a vector2 from wasd or arrow keys multiplied by the current player speed
         Vector2 movement = new Vector2(Input.GetAxis("Horizontal") * PlayerManager.PlayerSpeed * Time.deltaTime, Input.GetAxis("Vertical") * PlayerManager.PlayerSpeed * Time.deltaTime);
         
         //adds movement vector to the current velocity.
