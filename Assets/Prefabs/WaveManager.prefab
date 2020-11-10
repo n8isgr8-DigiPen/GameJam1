@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5752677743239812709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5752677743239812728}
+  - component: {fileID: 5752677743239812711}
+  - component: {fileID: 5752677743239812710}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5752677743239812728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752677743239812709}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.7, y: 6.04, z: -13.05622}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5752677743239812711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752677743239812709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1362399d04154e4a87e9b103147f191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - creatures: 0a000000
+  - creatures: 050000000a00000003000000
+  - creatures: 0600000003000000020000000a000000
+  - creatures: 14000000
+  - creatures: 14000000
+--- !u!114 &5752677743239812710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752677743239812709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ae983c1bc7229459a5961662caef00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shark: {fileID: 8483885337553981406, guid: 0f6f093f672a01247b894e9577bf1a88, type: 3}
+  PufferFish: {fileID: 6689759819117688187, guid: f4345bb2de89bd84aacca8e16193ad4d,
+    type: 3}
+  Octopus: {fileID: 368688468927910290, guid: 6c0a814263feedb4eb1b3f4d3934ba3f, type: 3}
+  Manta: {fileID: 8650254755289921419, guid: 1c80c11697bfd9448a106236986c7efa, type: 3}
+  Eel: {fileID: 7196778173473672080, guid: a2a6e9223f451fa4583a616d224cbb09, type: 3}
+  xPos: 8.82
+  yPos: 0
+  yRange: 8.19
+  spawnSpeed: 1
+  wave: 0
