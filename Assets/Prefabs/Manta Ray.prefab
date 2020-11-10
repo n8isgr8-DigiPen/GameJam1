@@ -271,6 +271,8 @@ MonoBehaviour:
   damage: 20
   DestroyOnCollide: 0
   DestroyOn: Player
+  HitPrefab: {fileID: 1445185572907028435, guid: 13efc100007ddfe42be6bb953b3a0ef7,
+    type: 3}
 --- !u!114 &282985695934047952
 MonoBehaviour:
   m_ObjectHideFlags: 0
