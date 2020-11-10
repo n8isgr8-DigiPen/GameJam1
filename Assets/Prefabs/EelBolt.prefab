@@ -144,6 +144,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  DestroyOnCollide: 1
+  DestroyOn: Player
+  HitPrefab: {fileID: 1445185572907028435, guid: 13efc100007ddfe42be6bb953b3a0ef7,
+    type: 3}
 --- !u!50 &-84502950032017708
 Rigidbody2D:
   serializedVersion: 4
