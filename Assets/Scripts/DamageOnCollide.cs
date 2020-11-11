@@ -26,10 +26,14 @@ public class DamageOnCollide : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag == DestroyOn && gameObject.tag == "Enemy")
+        {
+            GameObject.Find("WaveManager").GetComponent<WaveSpawning>().spawnedEntities.Remove(gameObject);
+            Destroy(gameObject);
+        }
         if (collision.gameObject.tag == DestroyOn)
         {
             Destroy(gameObject);
         }
-        
     }
 }
