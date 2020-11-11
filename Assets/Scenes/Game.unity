@@ -271,6 +271,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8246516910594103028, guid: 1c58798e08c09fe488ca83e9b3f29d4b,
+        type: 3}
+      propertyPath: waveSpawning
+      value: 
+      objectReference: {fileID: 1551389965}
+    - target: {fileID: 8246516910594103028, guid: 1c58798e08c09fe488ca83e9b3f29d4b,
+        type: 3}
+      propertyPath: hasHomingBullets
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8273368919477364592, guid: 1c58798e08c09fe488ca83e9b3f29d4b,
         type: 3}
       propertyPath: m_Enabled
@@ -810,6 +820,7 @@ MonoBehaviour:
   yRange: 8.19
   spawnSpeed: 1
   wave: 0
+  spawnedEntities: []
 --- !u!114 &1551389967
 MonoBehaviour:
   m_ObjectHideFlags: 0

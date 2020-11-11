@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -2351386440125673759}
   m_Layer: 11
   m_Name: Octopus
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

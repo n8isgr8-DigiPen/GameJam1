@@ -28,6 +28,9 @@ public class WaveSpawning : MonoBehaviour
 
     public int wave = 0;
 
+    //List of all GameObjects in scene.
+    public List<GameObject> spawnedEntities = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,9 +99,9 @@ public class WaveSpawning : MonoBehaviour
                 case "Shark":
                     if (wm.waves[wave].creatures[0] > 0)
                     {
-                        Instantiate(Shark, whereToSpawn, Quaternion.identity);
-                        
-                        
+                        GameObject newShark = Instantiate(Shark, whereToSpawn, Quaternion.identity);
+
+                    spawnedEntities.Add(newShark);
                     }
                     else
                     {
@@ -108,8 +111,9 @@ public class WaveSpawning : MonoBehaviour
                 case "PufferFish":
                     if (wm.waves[wave].creatures[1] > 0)
                     {
-                        Instantiate(PufferFish, whereToSpawn, Quaternion.identity);
-                        
+                        GameObject newPuffer = Instantiate(PufferFish, whereToSpawn, Quaternion.identity);
+
+                    spawnedEntities.Add(newPuffer);
                     }
                     else
                     {
@@ -119,8 +123,9 @@ public class WaveSpawning : MonoBehaviour
                 case "Octopus":
                     if (wm.waves[wave].creatures[2] > 0)
                     {
-                        Instantiate(Octopus, whereToSpawn, Quaternion.identity);
-                        
+                        GameObject newOctopus = Instantiate(Octopus, whereToSpawn, Quaternion.identity);
+
+                    spawnedEntities.Add(newOctopus);
                     }
                     else
                     {
@@ -130,8 +135,9 @@ public class WaveSpawning : MonoBehaviour
                 case "Manta":
                     if (wm.waves[wave].creatures[3] > 0)
                     {
-                        Instantiate(Manta, whereToSpawn, Quaternion.identity);
-                        
+                        GameObject newManta = Instantiate(Manta, whereToSpawn, Quaternion.identity);
+
+                    spawnedEntities.Add(newManta);
                     }
                     else
                     {
@@ -141,8 +147,9 @@ public class WaveSpawning : MonoBehaviour
                 case "Eel":
                     if (wm.waves[wave].creatures[4] > 0)
                     {
-                        Instantiate(Eel, whereToSpawn, Quaternion.identity);
-                        
+                        GameObject newEel = Instantiate(Eel, whereToSpawn, Quaternion.identity);
+
+                    spawnedEntities.Add(newEel);
                     }
                     else
                     {
