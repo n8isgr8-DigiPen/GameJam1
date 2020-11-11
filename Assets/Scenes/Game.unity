@@ -279,7 +279,7 @@ PrefabInstance:
     - target: {fileID: 8246516910594103028, guid: 1c58798e08c09fe488ca83e9b3f29d4b,
         type: 3}
       propertyPath: hasHomingBullets
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8273368919477364592, guid: 1c58798e08c09fe488ca83e9b3f29d4b,
         type: 3}
@@ -295,6 +295,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 585028831}
     m_Modifications:
+    - target: {fileID: 5906462358835532560, guid: 2aab736d62ccb944bb4462980eeb5df0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5906462358835532561, guid: 2aab736d62ccb944bb4462980eeb5df0,
         type: 3}
       propertyPath: m_LocalPosition.x

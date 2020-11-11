@@ -13,14 +13,7 @@ public class Fighting : MonoBehaviour
     private float timer;
     [Tooltip("Time between shots")]
     public float shootDelay = .2f;
-    public bool hasHomingBullets = false;
     public Transform bulletSpawnPoint;
-    private GameObject waveSpawning;
-    
-    void Start()
-    {
-        waveSpawning = GameObject.Find("WaveManager");
-    }
 
     // Update is called once per frame
     void Update() 
@@ -31,37 +24,21 @@ public class Fighting : MonoBehaviour
             if (timer >= shootDelay) 
             {
                 //Spawn Bullet
-                GameObject Bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation);
-                GameObject closestEnemy = findClosestEnemy();
-                if (hasHomingBullets && closestEnemy != null)
-                {
-                    //Sets the bullets velocity to the vector of the nearest enemy - the bullet spawn point.
-                    Bullet.GetComponent<Rigidbody2D>().velocity = (closestEnemy.transform.position - bulletSpawnPoint.transform.position).normalized * BulletSpeed;
-                }
-                else
-                {
-                    Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(BulletSpeed, 0);
-                }
-                timer = 0;
-                Destroy(Bullet, 2);
+                ShootBullet();
             }
         }
     }
 
-    //Finds the nearest enemy in the scene
-    private GameObject findClosestEnemy()
+    private void ShootBullet()
     {
-        GameObject closestEnemy = null;
-        float maxDistance = Mathf.Infinity;
-        foreach (GameObject enemy in waveSpawning.GetComponent<WaveSpawning>().spawnedEntities)
+        for (int i = 0; i < PlayerManager.BulletCount; i++)
         {
-            float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
-            if (distance < maxDistance)
-            {
-                closestEnemy = enemy;
-                maxDistance = distance;
-            }
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation);
+            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(BulletSpeed, i == 0 ? 0 : Random.Range(-.35f, .35f));
+            bullet.GetComponent<Bullet>().useHoming = PlayerManager.UseHomingBullets;
+            Destroy(bullet, 2);
         }
-        return closestEnemy;
+        timer = 0;
     }
+
 }

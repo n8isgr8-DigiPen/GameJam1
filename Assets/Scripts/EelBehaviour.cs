@@ -34,7 +34,7 @@ public class EelBehaviour : MonoBehaviour
     {
         transform.position = startPosition + new Vector2(0, Mathf.Sin(speed * Time.time)) * distance;
         target = GameObject.Find("Player").transform.position;
-        transform.LookAt(target);
+        transform.right = target - (Vector2)transform.position;
     }
 
     IEnumerator Fire()

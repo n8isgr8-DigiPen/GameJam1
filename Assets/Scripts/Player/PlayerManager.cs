@@ -52,7 +52,7 @@ public class PlayerManager
     /// </summary>
     public static bool UseHomingBullets
     {
-        get => Time.time > HomingEndTime ? false : true;
+        get => Time.time <= HomingEndTime;
     }
     #endregion
 
@@ -148,7 +148,7 @@ public class PlayerManager
     /// </returns>
     private static int GetBulletCount()
     {
-        int count = 0;
+        int count = 1;
         foreach (float t in bulletEndTimes)
         {
             if (t > Time.deltaTime)

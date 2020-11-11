@@ -234,4 +234,4 @@ MonoBehaviour:
   - {fileID: 3717076901025263873, guid: 77a2212430dc87d43a9a9cb9a17b5727, type: 3}
   - {fileID: 7757638178084525309, guid: d391defef5b9e37498d1e074ea55432a, type: 3}
   ChanceToDrop: 20
-  PowerUpLifeSpan: 3
+  PowerUpLifeSpan: 0
