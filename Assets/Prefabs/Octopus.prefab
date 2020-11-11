@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5747821081998751708}
   - component: {fileID: -1352412285058682091}
   - component: {fileID: -2351386440125673759}
+  - component: {fileID: 3475393509559355371}
   m_Layer: 11
   m_Name: Octopus
   m_TagString: Untagged
@@ -175,6 +176,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3475393509559355371}
+        m_MethodName: dropPowerUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   HEALTH: 20
 --- !u!114 &-1352412285058682091
 MonoBehaviour:
@@ -206,3 +218,22 @@ MonoBehaviour:
   DestroyOn: Player
   HitPrefab: {fileID: 1445185572907028435, guid: 13efc100007ddfe42be6bb953b3a0ef7,
     type: 3}
+--- !u!114 &3475393509559355371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368688468927910290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf0dd61b6a5c41409510ec58a1c256e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Powerups:
+  - {fileID: 8162904549019934486, guid: 5cd7bfb37b0db29448833a78ec4a6ddb, type: 3}
+  - {fileID: 8005866490286877183, guid: 3ba3fbe6ff397fe4587b9df6a62cad0a, type: 3}
+  - {fileID: 3717076901025263873, guid: 77a2212430dc87d43a9a9cb9a17b5727, type: 3}
+  - {fileID: 7757638178084525309, guid: d391defef5b9e37498d1e074ea55432a, type: 3}
+  ChanceToDrop: 20
+  PowerUpLifeSpan: 3

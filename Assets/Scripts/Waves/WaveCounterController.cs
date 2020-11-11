@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+/*
+Name: Evan Anderson
+Date: 11/8/2020
+Desc: Controls the ui for tracking 
+*/
 public class WaveCounterController : MonoBehaviour
 {
     Text Waves;
