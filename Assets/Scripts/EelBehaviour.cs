@@ -33,36 +33,18 @@ public class EelBehaviour : MonoBehaviour
     void Update()
     {
         transform.position = startPosition + new Vector2(0, Mathf.Sin(speed * Time.time)) * distance;
-        Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         target = GameObject.Find("Player").transform.position;
-        Vector3 lookAt = target;
-        spawn = transform.position;
-        //code for rotating from Khizbu on https://answers.unity.com/questions/798707/2d-look-at-mouse-position-z-rotation-c.html
-        float AngleRad = Mathf.Atan2(lookAt.y - this.transform.position.y, lookAt.x - this.transform.position.x);
-
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
-
-        this.transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+        transform.LookAt(target);
     }
+
     IEnumerator Fire()
     {
         while (true)
         {
-            SpawnFinder();
-            GameObject g = Instantiate(bolt, spawn, transform.rotation);
+            GameObject g = Instantiate(bolt, transform.Find("Spawn").position, transform.rotation);
             g.GetComponent<Rigidbody2D>().AddForce(transform.right * bulletSpeed);
             Destroy(g, 10);
             yield return new WaitForSeconds(FireRate);
-        }
-    }
-    void SpawnFinder()
-    {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            if(transform.GetChild(i).tag == "EelBoltSpawn")
-            {
-                spawn = transform.GetChild(i).position;
-            }
         }
     }
 }

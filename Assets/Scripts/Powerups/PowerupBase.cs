@@ -12,11 +12,16 @@ public abstract class PowerupBase : MonoBehaviour
     //method every powerup requires
     public abstract void Pickup();
 
+    private void Start()
+    {
+        GetComponent<Rigidbody2D>().AddForce(new Vector2(-25, 0));
+    }
+
     //runs pickup and destroys object on collision
     private void OnTriggerEnter2D(Collider2D c)
     {
         //if not player, return
-        if (!c.tag.Equals("Player")) return;
+        if (!c.CompareTag("Player")) return;
         //pickup and destroy object
         Pickup();
         Destroy(gameObject);
