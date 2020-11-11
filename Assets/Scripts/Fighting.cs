@@ -15,6 +15,13 @@ public class Fighting : MonoBehaviour
     public float shootDelay = .2f;
     public bool hasHomingBullets = false;
     public Transform bulletSpawnPoint;
+    private GameObject waveSpawning;
+    
+    void Start()
+    {
+        waveSpawning = GameObject.Find("WaveManager");
+    }
+
     // Update is called once per frame
     void Update() 
     {
@@ -23,18 +30,38 @@ public class Fighting : MonoBehaviour
         {
             if (timer >= shootDelay) 
             {
+                //Spawn Bullet
                 GameObject Bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation);
-                if (!hasHomingBullets)
+                GameObject closestEnemy = findClosestEnemy();
+                if (hasHomingBullets && closestEnemy != null)
                 {
-                    Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(BulletSpeed, 0);
+                    //Sets the bullets velocity to the vector of the nearest enemy - the bullet spawn point.
+                    Bullet.GetComponent<Rigidbody2D>().velocity = (closestEnemy.transform.position - bulletSpawnPoint.transform.position).normalized * BulletSpeed;
                 }
                 else
                 {
-                    //implement homing powerup here
+                    Bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(BulletSpeed, 0);
                 }
                 timer = 0;
                 Destroy(Bullet, 2);
             }
         }
+    }
+
+    //Finds the nearest enemy in the scene
+    private GameObject findClosestEnemy()
+    {
+        GameObject closestEnemy = null;
+        float maxDistance = Mathf.Infinity;
+        foreach (GameObject enemy in waveSpawning.GetComponent<WaveSpawning>().spawnedEntities)
+        {
+            float distance = Vector3.Distance(enemy.transform.position, gameObject.transform.position);
+            if (distance < maxDistance)
+            {
+                closestEnemy = enemy;
+                maxDistance = distance;
+            }
+        }
+        return closestEnemy;
     }
 }
