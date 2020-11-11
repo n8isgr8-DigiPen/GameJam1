@@ -39,6 +39,10 @@ public class PlayerManager
             lastHomingCheckTime = Time.time;
         }
         homingTimeLeft -= (Time.time - lastHomingCheckTime);
+        if (homingTimeLeft < 0)
+        {
+            homingTimeLeft = 0;
+        }
         lastHomingCheckTime = Time.time;
         return homingTimeLeft;
     }
@@ -82,13 +86,17 @@ public class PlayerManager
             lastSpeedCheckTime = Time.time;
         }
         speedTimeLeft -= (Time.time - lastSpeedCheckTime);
+        if (speedTimeLeft < 0)
+        {
+            speedTimeLeft = 0;
+        }
         lastSpeedCheckTime = Time.time;
         return speedTimeLeft;
     }
 
     public static float PlayerSpeed
     {
-        get => GetSpeedTimeLeft() >= Time.time ? 12 : 8;
+        get => GetSpeedTimeLeft() >= Time.time ? 24 : 8;
     }
 
 
