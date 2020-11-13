@@ -1,8 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿/*
+Name: Nate Stern
+Date: 11/9/20
+Desc: Loads menu and game scene and switching between with pausing
+*/
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameMenuHelper : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class GameMenuHelper : MonoBehaviour
 
     private void Update()
     {
+        //if escape key is pressed pause the game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
@@ -20,6 +23,7 @@ public class GameMenuHelper : MonoBehaviour
 
     private void Start()
     {
+        //get texts and turn off the quit button
         pauseText = GameObject.Find("Pause Text");
         quitButton = GameObject.Find("Quit Button");
         quitButton.SetActive(false);
@@ -27,14 +31,17 @@ public class GameMenuHelper : MonoBehaviour
 
     public void Quit()
     {
+        //loads into menu
         SceneManager.LoadScene("Main Menu");
     }
 
     private void Pause()
     {
-        Debug.Log("Pause");
+        //flip the pause
         paused = !paused;
+        //freeze game or continue
         Time.timeScale = paused ? 0 : 1;
+        //swap quit button and pausetext active state
         quitButton.SetActive(paused);
         pauseText.SetActive(!paused);
     }

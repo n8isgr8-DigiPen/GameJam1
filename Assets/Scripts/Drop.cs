@@ -18,7 +18,7 @@ public class Drop : MonoBehaviour
     {
         if(Random.value > 1.0 - (ChanceToDrop / 100))
         {
-            GameObject g = Instantiate(Powerups[Random.Range(0, Powerups.Length - 1)], transform.position, Quaternion.identity);
+            GameObject g = Instantiate(Powerups[Random.Range(0, Powerups.Length)], transform.position, Quaternion.identity);
             if(PowerUpLifeSpan > 0)
             {
                 Destroy(g, PowerUpLifeSpan);
