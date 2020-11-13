@@ -52,7 +52,7 @@ public class PlayerManager
     /// </summary>
     public static bool UseHomingBullets
     {
-        get => Time.time <= HomingEndTime;
+        get => HomingEndTime > Time.time;
     }
     #endregion
 
@@ -96,9 +96,8 @@ public class PlayerManager
 
     public static float PlayerSpeed
     {
-        get => GetSpeedTimeLeft() >= Time.time ? 24 : 8;
+        get => SpeedEndTime > Time.time ? 16 : 10;
     }
-
 
     #endregion
 
