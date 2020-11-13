@@ -136,7 +136,7 @@ public class PlayerManager
     /// <param name="seconds">Adds 1 bullet lasting for this amount of seconds</param>
     public static void AddBullet(float seconds)
     {
-        bulletEndTimes.Add(Time.deltaTime + seconds);
+        bulletEndTimes.Add(Time.time + seconds);
     }
 
     /// <summary>
@@ -148,9 +148,12 @@ public class PlayerManager
     private static int GetBulletCount()
     {
         int count = 1;
-        foreach (float t in bulletEndTimes)
+        float[] bulletEndTimesArr = new float[bulletEndTimes.Count];
+        bulletEndTimes.CopyTo(bulletEndTimesArr);
+        for(int i = 0; i < bulletEndTimesArr.Length; i++)
         {
-            if (t > Time.deltaTime)
+            float t = bulletEndTimesArr[i];
+            if (t < Time.time)
             {
                 bulletEndTimes.Remove(t);
             }
