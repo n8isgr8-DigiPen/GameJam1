@@ -11,9 +11,12 @@ public abstract class PowerupBase : MonoBehaviour
 {
     //method every powerup requires
     public abstract void Pickup();
+    //powerup audio source
+    private AudioSource powerup;
 
     private void Start()
     {
+        powerup = GameObject.Find("Player").GetComponent<AudioSource>();
         GetComponent<Rigidbody2D>().AddForce(new Vector2(-25, 0));
     }
 
@@ -22,6 +25,8 @@ public abstract class PowerupBase : MonoBehaviour
     {
         //if not player, return
         if (!c.CompareTag("Player")) return;
+        //player powerup sound
+        powerup.Play();
         //pickup and destroy object
         Pickup();
         Destroy(gameObject);
