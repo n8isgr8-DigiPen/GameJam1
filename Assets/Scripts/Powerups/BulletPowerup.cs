@@ -1,7 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿/*
+Name: Nate Stern
+Date: 11/6/20
+Desc: Powerup that adds an additional bullet for 5 seconds on pickup
+*/
 public class BulletPowerup : PowerupBase
 {
     //adds a new bullet spawn for 5 seconds

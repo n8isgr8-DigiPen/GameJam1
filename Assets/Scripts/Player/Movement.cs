@@ -3,8 +3,7 @@ Name: Nate Stern
 Date: 11/4/20
 Desc: Moves the player using wasd or arrow keys. based on velocity with a max speed cap.
 */
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 //adds a rigidbody 2d by default

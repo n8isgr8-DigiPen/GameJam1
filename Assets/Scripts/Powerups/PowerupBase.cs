@@ -14,6 +14,7 @@ public abstract class PowerupBase : MonoBehaviour
     //powerup audio source
     private AudioSource powerup;
 
+    //adds powerup audio source and makes powerup move backwards for ship moving forwards effect always.
     private void Start()
     {
         powerup = GameObject.Find("Player").GetComponent<AudioSource>();
